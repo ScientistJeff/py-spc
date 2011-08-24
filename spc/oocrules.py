@@ -13,6 +13,7 @@ def test_violating_runs(data, center, lcl, ucl):
     for i in range(1, len(data)):
         if (data[i-1] - center)*(data[i] - center) < 0:
             return False
+            
     return True
 
 def test_beyond_1sigma(data, center, lcl, ucl):
@@ -27,8 +28,9 @@ def test_beyond_1sigma(data, center, lcl, ucl):
     if data[i] < lower
         count_below += 1
         
-    if count_above >= len(data) or count_below <= len(data)
+    if count_above >= len(data) - 1 or count_below <= len(data) - 1:
         return True
+        
     return False
     
 def test_beyond_2sigma(data, center, lcl, ucl):
@@ -43,8 +45,9 @@ def test_beyond_2sigma(data, center, lcl, ucl):
     if data[i] < lower
         count_below += 1
         
-    if count_above >= len(data) or count_below <= len(data)
+    if count_above >= len(data) - 1 or count_below <= len(data) - 1:
         return True
+        
     return False
     
 def test_trending_runs(data, center, lcl, ucl):
@@ -64,5 +67,5 @@ def test_trending_runs(data, center, lcl, ucl):
         # Return False if no trend, else true    
         if up == False and down == False:
             return False
-        else
-            return True
+
+        return True
