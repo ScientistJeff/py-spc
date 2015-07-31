@@ -1,0 +1,1 @@
+Based on the spc-0.3 found at https://launchpad.net/python-spc.
